@@ -9,11 +9,10 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --pink:#f0008b;
-  --magenta:#c90035;
-  --black:#111;
+  --pink:#ff008c;
+  --pink-dark:#e0007b;
+  --black:#000;
   --white:#fff;
-  --off:#fafafa;
   --mid:#8b8f98;
   --light:#eeeeee;
   --sans:Arial,Helvetica,sans-serif;
@@ -26,22 +25,14 @@ color:var(--black);
 -webkit-font-smoothing:antialiased;
 }
 
-.top-bar{
-background:#232228;
-color:#fff;
-text-align:center;
-font-size:14px;
-padding:12px 16px;
-}
-
 header{
 text-align:center;
-padding:22px 16px 20px;
+padding:30px 16px 24px;
 border-bottom:1px solid var(--light);
 }
 
 .wordmark{
-font-size:34px;
+font-size:36px;
 font-weight:900;
 letter-spacing:-1px;
 color:var(--pink);
@@ -55,7 +46,7 @@ padding:0 20px 60px;
 }
 
 .hero{
-padding:38px 0 0;
+padding:40px 0 0;
 text-align:center;
 }
 
@@ -79,7 +70,7 @@ margin-bottom:10px;
 
 .hero-title em{
 font-style:normal;
-color:var(--magenta);
+color:var(--pink);
 }
 
 .hero-sub{
@@ -127,7 +118,7 @@ background:var(--light);
 width:22px;
 height:22px;
 border-radius:50%;
-background:var(--magenta);
+background:var(--pink);
 color:var(--white);
 font-size:11px;
 font-weight:800;
@@ -153,7 +144,7 @@ padding:30px 0 0;
 display:block;
 width:100%;
 text-align:center;
-background:var(--magenta);
+background:var(--pink);
 color:var(--white);
 text-decoration:none;
 padding:18px 20px;
@@ -162,16 +153,16 @@ font-weight:900;
 letter-spacing:2.5px;
 text-transform:uppercase;
 border-radius:3px;
-transition:opacity .2s, transform .18s ease;
+transition:background-color .18s ease, transform .18s ease, opacity .18s ease;
 }
 
 .cta:hover{
-opacity:.86;
+background:var(--pink-dark);
 transform:translateY(-1px);
 }
 
 .cta:active{
-opacity:.78;
+background:#c9006f;
 transform:scale(.985);
 }
 
@@ -285,23 +276,19 @@ line-height:1.5;
 
 @media(max-width:520px){
 .hero-title{font-size:40px}
-.wordmark{font-size:32px}
+.wordmark{font-size:34px}
 main{padding-left:20px;padding-right:20px}
 }
 
 @media(max-width:380px){
 .hero-title{font-size:36px}
-.wordmark{font-size:29px}
+.wordmark{font-size:31px}
 .step-text h3{font-size:14px}
 }
 </style>
 </head>
 
 <body>
-
-<div class="top-bar">
-  Summer Just Got Hotter
-</div>
 
 <header>
   <div class="wordmark">GARAGE</div>
