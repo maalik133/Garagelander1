@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Garage Rewards</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --pink:#f0008b;
+  --magenta:#c90035;
+  --black:#111;
+  --white:#fff;
+  --off:#fafafa;
+  --mid:#8b8f98;
+  --light:#eeeeee;
+  --sans:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:var(--white);
+font-family:var(--sans);
+color:var(--black);
+-webkit-font-smoothing:antialiased;
+}
+
+.top-bar{
+background:#232228;
+color:#fff;
+text-align:center;
+font-size:14px;
+padding:12px 16px;
+}
+
+header{
+text-align:center;
+padding:22px 16px 20px;
+border-bottom:1px solid var(--light);
+}
+
+.wordmark{
+font-size:34px;
+font-weight:900;
+letter-spacing:-1px;
+color:var(--pink);
+text-transform:uppercase;
+}
+
+main{
+max-width:480px;
+margin:0 auto;
+padding:0 20px 60px;
+}
+
+.hero{
+padding:38px 0 0;
+text-align:center;
+}
+
+.hero-eyebrow{
+font-size:10px;
+font-weight:700;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--mid);
+margin-bottom:14px;
+}
+
+.hero-title{
+font-size:46px;
+font-weight:900;
+line-height:1.05;
+color:var(--black);
+letter-spacing:-1.5px;
+margin-bottom:10px;
+}
+
+.hero-title em{
+font-style:normal;
+color:var(--magenta);
+}
+
+.hero-sub{
+font-size:14px;
+color:var(--mid);
+line-height:1.6;
+margin-bottom:38px;
+}
+
+.divider{
+height:1px;
+background:var(--light);
+margin:0 0 38px;
+}
+
+.steps-label{
+font-size:10px;
+font-weight:700;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--mid);
+margin-bottom:24px;
+}
+
+.step{
+display:grid;
+grid-template-columns:22px 1fr;
+gap:0 20px;
+align-items:start;
+padding-bottom:24px;
+position:relative;
+}
+
+.step:not(:last-child)::after{
+content:"";
+position:absolute;
+left:10px;
+top:25px;
+bottom:0;
+width:1px;
+background:var(--light);
+}
+
+.step-num{
+width:22px;
+height:22px;
+border-radius:50%;
+background:var(--magenta);
+color:var(--white);
+font-size:11px;
+font-weight:800;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+z-index:1;
+}
+
+.step-text h3{
+font-size:15px;
+font-weight:700;
+line-height:1.4;
+color:var(--black);
+}
+
+.cta-wrap{
+padding:30px 0 0;
+}
+
+.cta{
+display:block;
+width:100%;
+text-align:center;
+background:var(--magenta);
+color:var(--white);
+text-decoration:none;
+padding:18px 20px;
+font-size:12px;
+font-weight:900;
+letter-spacing:2.5px;
+text-transform:uppercase;
+border-radius:3px;
+transition:opacity .2s, transform .18s ease;
+}
+
+.cta:hover{
+opacity:.86;
+transform:translateY(-1px);
+}
+
+.cta:active{
+opacity:.78;
+transform:scale(.985);
+}
+
+/* TRUSTPILOT */
+.tp-wrap{
+padding:32px 0;
+border-top:1px solid var(--light);
+border-bottom:1px solid var(--light);
+text-align:center;
+margin:40px 0;
+}
+
+.tp-logo-row{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:7px;
+margin-bottom:10px;
+}
+
+.tp-logo-row svg{width:18px;height:18px;}
+
+.tp-wordmark{
+font-size:17px;
+font-weight:700;
+color:var(--black);
+letter-spacing:-.2px;
+}
+
+.tp-stars{
+display:flex;
+justify-content:center;
+gap:3px;
+margin-bottom:7px;
+}
+
+.tp-sq{
+width:22px;
+height:22px;
+border-radius:3px;
+background:#00b67a;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+flex-shrink:0;
+}
+
+.tp-sq.half{
+background:linear-gradient(to right,#00b67a 50%,#dcdce6 50%);
+}
+
+.tp-sq svg{
+width:13px;
+height:13px;
+fill:#fff;
+}
+
+.tp-score{
+font-size:12px;
+color:var(--mid);
+}
+
+.tp-score strong{
+color:var(--black);
+}
+
+.faq-section{margin-bottom:0;}
+
+.faq-eyebrow{
+font-size:10px;
+font-weight:700;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--mid);
+margin-bottom:20px;
+}
+
+.faq-item{
+padding:18px 0;
+border-bottom:1px solid var(--light);
+}
+
+.faq-item:first-of-type{
+border-top:1px solid var(--light);
+}
+
+.faq-q{
+font-size:14px;
+font-weight:700;
+color:var(--black);
+margin-bottom:7px;
+}
+
+.faq-a{
+font-size:13px;
+color:var(--mid);
+line-height:1.65;
+}
+
+footer{
+padding:32px 20px 0;
+text-align:center;
+}
+
+.footer-copy{
+font-size:11px;
+color:#bbb;
+line-height:1.5;
+}
+
+@media(max-width:520px){
+.hero-title{font-size:40px}
+.wordmark{font-size:32px}
+main{padding-left:20px;padding-right:20px}
+}
+
+@media(max-width:380px){
+.hero-title{font-size:36px}
+.wordmark{font-size:29px}
+.step-text h3{font-size:14px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  Summer Just Got Hotter
+</div>
+
+<header>
+  <div class="wordmark">GARAGE</div>
+</header>
+
+<main>
+
+<section class="hero">
+  <p class="hero-eyebrow">Exclusive Reward</p>
+  <h1 class="hero-title">Claim Your<br><em>$750 Reward</em></h1>
+  <p class="hero-sub">Complete the steps below to unlock your Garage reward.</p>
+</section>
+
+<div class="divider"></div>
+
+<p class="steps-label">How it works</p>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-text"><h3>Click "Continue to Next Step"</h3></div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-text"><h3>Enter your email</h3></div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-text"><h3>Complete 4–6 quick deals</h3></div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-text"><h3>Claim your $750 reward</h3></div>
+</div>
+
+<div class="cta-wrap">
+  <a class="cta" href="https://giftclick.org/aff_c?offer_id=3857&aff_id=170653&source=garagelander1">Continue to Next Step →</a>
+</div>
+
+<div class="tp-wrap">
+  <div class="tp-logo-row">
+    <svg viewBox="0 0 24 24" fill="#00b67a" xmlns="http://www.w3.org/2000/svg"><path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"/></svg>
+    <span class="tp-wordmark">Trustpilot</span>
+  </div>
+
+  <div class="tp-stars">
+    <div class="tp-sq"><svg viewBox="0 0 24 24"><path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"/></svg></div>
+    <div class="tp-sq"><svg viewBox="0 0 24 24"><path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"/></svg></div>
+    <div class="tp-sq"><svg viewBox="0 0 24 24"><path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"/></svg></div>
+    <div class="tp-sq"><svg viewBox="0 0 24 24"><path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"/></svg></div>
+    <div class="tp-sq half"><svg viewBox="0 0 24 24"><path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"/></svg></div>
+  </div>
+
+  <p class="tp-score"><strong>4.5</strong> out of 5 · <span style="color:#00b67a;font-weight:600;">7,983 reviews</span></p>
+</div>
+
+<div class="faq-section">
+  <p class="faq-eyebrow">Common Questions</p>
+
+  <div class="faq-item">
+    <p class="faq-q">What are deals?</p>
+    <p class="faq-a">Simple tasks — a short survey, a free app download, or a trial sign-up. Complete all the ones shown to maximize your reward.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How many deals do I have to do?</p>
+    <p class="faq-a">Most people complete 4–6. The more you finish, the higher your reward.</p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p class="footer-copy">Eligibility and completion terms apply. This page is not affiliated with, endorsed by, or sponsored by Garage.</p>
+</footer>
+
+</body>
+</html>
