@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Garage Rewards</title>
 
+<!-- ===== SWAP PER CAMPAIGN =====
+     Retailer:  find/replace "Garage" / "GARAGE"
+     Reward:    find/replace "$750"
+     Color:     --pink below
+     Link:      .cta href
+     ============================ -->
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -65,7 +72,7 @@ font-weight:900;
 line-height:1.05;
 color:var(--black);
 letter-spacing:-1.5px;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 .hero-title em{
@@ -74,16 +81,17 @@ color:var(--pink);
 }
 
 .hero-sub{
-font-size:14px;
+font-size:15px;
+font-weight:600;
 color:var(--mid);
-line-height:1.6;
-margin-bottom:38px;
+line-height:1.5;
+margin-bottom:36px;
 }
 
 .divider{
 height:1px;
 background:var(--light);
-margin:0 0 38px;
+margin:0 0 34px;
 }
 
 .steps-label{
@@ -92,15 +100,15 @@ font-weight:700;
 letter-spacing:3px;
 text-transform:uppercase;
 color:var(--mid);
-margin-bottom:24px;
+margin-bottom:22px;
 }
 
 .step{
 display:grid;
 grid-template-columns:22px 1fr;
-gap:0 20px;
-align-items:start;
-padding-bottom:24px;
+gap:0 18px;
+align-items:center;
+padding-bottom:22px;
 position:relative;
 }
 
@@ -108,7 +116,7 @@ position:relative;
 content:"";
 position:absolute;
 left:10px;
-top:25px;
+top:24px;
 bottom:0;
 width:1px;
 background:var(--light);
@@ -130,14 +138,14 @@ z-index:1;
 }
 
 .step-text h3{
-font-size:15px;
+font-size:16px;
 font-weight:700;
-line-height:1.4;
+line-height:1.35;
 color:var(--black);
 }
 
 .cta-wrap{
-padding:30px 0 0;
+padding:28px 0 0;
 }
 
 .cta{
@@ -147,13 +155,13 @@ text-align:center;
 background:var(--pink);
 color:var(--white);
 text-decoration:none;
-padding:18px 20px;
-font-size:12px;
+padding:19px 20px;
+font-size:13px;
 font-weight:900;
-letter-spacing:2.5px;
+letter-spacing:2px;
 text-transform:uppercase;
 border-radius:3px;
-transition:background-color .18s ease, transform .18s ease, opacity .18s ease;
+transition:background-color .18s ease, transform .18s ease;
 }
 
 .cta:hover{
@@ -168,11 +176,11 @@ transform:scale(.985);
 
 /* TRUSTPILOT */
 .tp-wrap{
-padding:32px 0;
+padding:30px 0;
 border-top:1px solid var(--light);
 border-bottom:1px solid var(--light);
 text-align:center;
-margin:40px 0;
+margin:38px 0;
 }
 
 .tp-logo-row{
@@ -238,7 +246,7 @@ font-weight:700;
 letter-spacing:3px;
 text-transform:uppercase;
 color:var(--mid);
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .faq-item{
@@ -254,17 +262,17 @@ border-top:1px solid var(--light);
 font-size:14px;
 font-weight:700;
 color:var(--black);
-margin-bottom:7px;
+margin-bottom:6px;
 }
 
 .faq-a{
 font-size:13px;
 color:var(--mid);
-line-height:1.65;
+line-height:1.6;
 }
 
 footer{
-padding:32px 20px 0;
+padding:30px 20px 0;
 text-align:center;
 }
 
@@ -283,7 +291,7 @@ main{padding-left:20px;padding-right:20px}
 @media(max-width:380px){
 .hero-title{font-size:36px}
 .wordmark{font-size:31px}
-.step-text h3{font-size:14px}
+.step-text h3{font-size:15px}
 }
 </style>
 </head>
@@ -299,7 +307,7 @@ main{padding-left:20px;padding-right:20px}
 <section class="hero">
   <p class="hero-eyebrow">Exclusive Reward</p>
   <h1 class="hero-title">Claim Your<br><em>$750 Reward</em></h1>
-  <p class="hero-sub">Complete the steps below to unlock your Garage reward.</p>
+  <p class="hero-sub">Finish the quick steps to unlock it.</p>
 </section>
 
 <div class="divider"></div>
@@ -308,7 +316,7 @@ main{padding-left:20px;padding-right:20px}
 
 <div class="step">
   <div class="step-num">1</div>
-  <div class="step-text"><h3>Click "Continue to Next Step"</h3></div>
+  <div class="step-text"><h3>Tap “Continue” below</h3></div>
 </div>
 
 <div class="step">
@@ -327,7 +335,7 @@ main{padding-left:20px;padding-right:20px}
 </div>
 
 <div class="cta-wrap">
-  <a class="cta" href="https://giftclick.org/aff_c?offer_id=3857&aff_id=170653&source=garagelander1">Continue to Next Step →</a>
+  <a class="cta" href="https://giftclick.org/aff_c?offer_id=3857&aff_id=170653&source=garagelander1">Continue →</a>
 </div>
 
 <div class="tp-wrap">
@@ -351,13 +359,13 @@ main{padding-left:20px;padding-right:20px}
   <p class="faq-eyebrow">Common Questions</p>
 
   <div class="faq-item">
-    <p class="faq-q">What are deals?</p>
-    <p class="faq-a">Simple tasks — a short survey, a free app download, or a trial sign-up. Complete all the ones shown to maximize your reward.</p>
+    <p class="faq-q">What are the deals?</p>
+    <p class="faq-a">Quick tasks — a short survey, a free app, or a trial sign-up. Do the ones shown to unlock the full reward.</p>
   </div>
 
   <div class="faq-item">
-    <p class="faq-q">How many deals do I have to do?</p>
-    <p class="faq-a">Most people complete 4–6. The more you finish, the higher your reward.</p>
+    <p class="faq-q">How many do I do?</p>
+    <p class="faq-a">Most people finish 4–6. The more you do, the bigger the reward.</p>
   </div>
 </div>
 
